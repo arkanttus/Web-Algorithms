@@ -1,0 +1,7 @@
+# Long Polling O que é ?
+&nbsp;&nbsp;&nbsp;O Long Polling é uma técnica que simula uma indisponibilidade do servidor para manter uma conexão HTTP aberta. Essa técnica foi criada a partir da necessidade de comunicação em tempo real com um servidor web. O script criado contém uma classe LongPolling que facilita a utilização do método em seus sistemas web.
+
+# Como utilizar ?
+&nbsp;&nbsp;&nbsp;Para utilizar o script criado, basta fazer um include "diretorio_ate_o_arquivo_de_polling/LongPolling.php" no script que iniciará o polling. Após a inclusão do arquivo em seu script, você irá instanciar um objeto da classe, passando como parâmetro do construtor a query que será executada, o valor atual do dado, o tempo em que o script ficará em execução e por quanto tempo o script ficará dormindo.
+<br>&nbsp;&nbsp;&nbsp;Depois de instanciar a classe, basta chamar o metodo start() na próxima linha e pronto, a mágica do Long Polling vai acontecer. Perceba que o próprio método start() propaga uma mensagem, uma mensagem vazia no caso de nenhum dado novo ter sido inserido no DB ou uma mensagem contendo o novo valor que foi inserido no DB.
+<br>&nbsp;&nbsp;&nbsp;Fique atento aos metodos de execução de query e comunicação com o DB que foram utilizados, no caso, métodos da classe PDO do PHP. O objeto PDO foi retornado pela classe Conexao. Fica sob sua responsabilidade implementar uma classe Conexao ou utilizar outros meios para se conectar com o DB.
