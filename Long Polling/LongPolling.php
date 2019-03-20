@@ -34,7 +34,7 @@ class LongPolling{
 		//Ficará executando enquanto o tempo atual - tempo inicial for menor igual que o tempo estipulado em $Execution_Time
 		while( time() - $timeStart < ($this->EXECUTION_TIME - $this->SLEEP_TIME )){
 
-			$result = $this->conexao->query($this->query)->fetchColumn();
+			$result = $this->conexao->query($this->query);
 			
 			//verifica se o dado capturado é novo, se for, retorna ele
 			if( $this->dado != $result){
