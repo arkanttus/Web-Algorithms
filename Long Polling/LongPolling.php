@@ -11,7 +11,7 @@ class LongPolling{
 	private $conexao;
 	private $query; //Contains the query that will be executed to compare with the current value
 	private $dado; //Stores the current value shown to the user
-	private $EXECUTION_TIME; //Sets how long the script will run
+	private $EXECUTION_TIME; //Sets how long the script will run. Set 0 for the script to run in infinite loop
 	private $SLEEP_TIME; //Time wich the script will is sleeping
 
 	function __construct($query, $dado, $execTime, $sleep){
